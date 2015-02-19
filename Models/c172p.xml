@@ -1310,7 +1310,7 @@
    <type>rotate</type>
    <object-name>vitesse</object-name>
    <property>/fdm/jsbsim/aero/alpha-deg</property>
-   <factor>-0</factor>
+   <factor>-1</factor>
    <axis>
      <x>0.0</x>
      <y>1.0</y>
@@ -1342,23 +1342,7 @@
  
     
     <!-- Vecteur vitesse fantome -->
-         <animation>
-   <type>scale</type>
-   <object-name>vitesse2</object-name>
-   <property>/fdm/jsbsim/accelerations/nz</property>
-  <x-min>0.1</x-min>
-  <y-min>0.1</y-min>
-  <z-min>0.1</z-min>
-  <x-factor>0.005</x-factor>
-  <y-factor>0.005</y-factor>
-  <z-factor>0.005</z-factor>
-     <center>
-     <x-m>-1.5</x-m>
-     <y-m>-0.0</y-m>
-     <z-m>-1</z-m>
-   </center>
-  
-   </animation>
+
       
   <animation>
    <type>rotate</type>
@@ -1377,6 +1361,32 @@
    </center>
  </animation> 
 
+
+   <animation>
+   <type>scale</type>
+   <object-name>vitesse2</object-name>
+   
+   <expression>
+       <product>
+          <property>/fdm/jsbsim/velocities/vtrue-kts</property>
+           <sqrt>
+			<property>/fdm/jsbsim/accelerations/Nz</property>
+         </sqrt>
+       </product>
+     </expression>
+  <x-min>0.1</x-min>
+  <y-min>0.1</y-min>
+  <z-min>0.1</z-min>
+  <x-factor>1</x-factor>
+  <y-factor>0.5</y-factor>
+  <z-factor>0.5</z-factor>
+     <center>
+     <x-m>-1.5</x-m>
+     <y-m>-0.0</y-m>
+     <z-m>-1</z-m>
+   </center>
+  
+   </animation>
  
   <!-- Poussee -->
  <animation>
@@ -1397,12 +1407,16 @@
  </animation>
  
    <!-- Portance -->
+   
+
+   
  <animation>
    <type>scale</type>
    <object-name>portance</object-name>
    <property>/fdm/jsbsim/forces/fwz-aero-lbs</property>
+         <factor>0.1</factor>
   <x-min>0.1</x-min>
-  <y-min>0.0.1</y-min>
+  <y-min>0.1</y-min>
   <z-min>0.1</z-min>
   <x-factor>0.002</x-factor>
   <y-factor>0.002</y-factor>
@@ -1413,12 +1427,12 @@
      <z-m>0.5</z-m>
    </center>
  </animation>
-      
-  <animation>
+ 
+     <animation>
    <type>rotate</type>
    <object-name>portance</object-name>
    <property>/fdm/jsbsim/aero/alpha-deg</property>
-   <factor>1</factor>
+   <factor>-1</factor>
    <axis>
      <x>0.0</x>
      <y>1.0</y>
@@ -1429,7 +1443,9 @@
      <y-m>-0.0</y-m>
      <z-m>0.5</z-m>
    </center>
- </animation>
+ </animation> 
+      
+
  
  
     <!-- Trainee -->
@@ -1454,7 +1470,7 @@
    <type>rotate</type>
    <object-name>trainee</object-name>
    <property>/fdm/jsbsim/aero/alpha-deg</property>
-   <factor>1</factor>
+   <factor>-1</factor>
    <axis>
      <x>0.0</x>
      <y>1.0</y>
@@ -1466,12 +1482,30 @@
      <z-m>0</z-m>
    </center>
  </animation>
+ 
+    <animation>
+   <type>rotate</type>
+   <object-name>trainee</object-name>
+   <property>/orientation/side-slip-deg</property>
+   <factor>1</factor>
+   <axis>
+     <x>0.0</x>
+     <y>0.0</y>
+     <z>1.0</z>
+   </axis>
+   <center>
+     <x-m>6</x-m>
+     <y-m>0.0</y-m>
+     <z-m>0</z-m>
+   </center>
+ </animation>
 
    <!-- Poids -->
  <animation>
    <type>scale</type>
    <object-name>poids</object-name>
    <property>/fdm/jsbsim/inertia/weight-lbs</property>
+      <factor>0.1</factor>
   <x-min>0.1</x-min>
   <y-min>0.1</y-min>
   <z-min>0.1</z-min>
