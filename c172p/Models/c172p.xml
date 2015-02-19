@@ -1281,9 +1281,9 @@
    <type>scale</type>
    <object-name>vitesse</object-name>
    <property>/fdm/jsbsim/velocities/vtrue-kts</property>
-  <x-min>0.1</x-min>
-  <y-min>0.1</y-min>
-  <z-min>0.1</z-min>
+  <x-min>0.0</x-min>
+  <y-min>0.0</y-min>
+  <z-min>0.0</z-min>
   <x-factor>0.1</x-factor>
   <y-factor>0.05</y-factor>
   <z-factor>0.05</z-factor>
@@ -1349,39 +1349,55 @@
    </center>
  </animation> 
 
-
-   <animation>
+ <animation>
    <type>scale</type>
-   <object-name>vitesse2</object-name>
-      <expression>
-       <product>
-          <property>/fdm/jsbsim/velocities/vtrue-kts</property>
-           <sqrt>
-			<property>/fdm/jsbsim/accelerations/Nz</property>
-         </sqrt>
-       </product>
-     </expression>
-  <x-min>0.1</x-min>
-  <y-min>0.1</y-min>
-  <z-min>0.1</z-min>
+    <object-name>vitesse2</object-name>
+    <property>/fdm/jsbsim/velocities/vtrue-kts</property>
+  <x-min>0.0</x-min>
+  <y-min>0</y-min>
+  <z-min>0</z-min>
   <x-factor>1</x-factor>
-  <y-factor>0.5</y-factor>
-  <z-factor>0.5</z-factor>
+  <y-factor>1</y-factor>
+  <z-factor>1</z-factor>
      <center>
      <x-m>-1.5</x-m>
      <y-m>-0.0</y-m>
      <z-m>-1</z-m>
    </center>
    </animation>
+   
+    <animation>
+   <type>scale</type>
+    <object-name>vitesse2</object-name>
+         <expression>
+				 <fabs>
+					<property>/fdm/jsbsim/accelerations/Nz</property>
+				</fabs>
+		 </expression>
+  <x-min>0</x-min>
+  <y-min>0</y-min>
+  <z-min>0</z-min>
+  <x-factor>1</x-factor>
+  <y-factor>1</y-factor>
+  <z-factor>1</z-factor>
+     <center>
+     <x-m>-1.5</x-m>
+     <y-m>-0.0</y-m>
+     <z-m>-1</z-m>
+   </center>
+   </animation>
+  
+  
+
  
   <!-- Poussee -->
  <animation>
    <type>scale</type>
    <object-name>poussee</object-name>
    <property>/fdm/jsbsim/propulsion/engine/thrust-lbs</property>
-  <x-min>0.1</x-min>
-  <y-min>0.1</y-min>
-  <z-min>0.1</z-min>
+  <x-min>0</x-min>
+  <y-min>0</y-min>
+  <z-min>0</z-min>
   <x-factor>0.00445</x-factor>
   <y-factor>0.002</y-factor>
   <z-factor>0.002</z-factor>
@@ -1400,9 +1416,9 @@
    <object-name>portance</object-name>
    <property>/fdm/jsbsim/forces/fwz-aero-lbs</property>
          <factor>0.1</factor>
-  <x-min>0.1</x-min>
-  <y-min>0.1</y-min>
-  <z-min>0.1</z-min>
+  <x-min>0</x-min>
+  <y-min>0</y-min>
+  <z-min>0</z-min>
   <x-factor>0.002</x-factor>
   <y-factor>0.002</y-factor>
   <z-factor>0.00445</z-factor>
@@ -1436,9 +1452,9 @@
    <type>scale</type>
    <object-name>trainee</object-name>
    <property>/fdm/jsbsim/forces/fwx-aero-lbs</property>
-  <x-min>0.1</x-min>
-  <y-min>0.1</y-min>
-  <z-min>0.1</z-min>
+  <x-min>0</x-min>
+  <y-min>0</y-min>
+  <z-min>0</z-min>
   <x-factor>0.00445</x-factor>
   <y-factor>0.002</y-factor>
   <z-factor>0.002</z-factor>
@@ -1489,9 +1505,9 @@
    <object-name>poids</object-name>
    <property>/fdm/jsbsim/inertia/weight-lbs</property>
       <factor>0.1</factor>
-  <x-min>0.1</x-min>
-  <y-min>0.1</y-min>
-  <z-min>0.1</z-min>
+  <x-min>0</x-min>
+  <y-min>0</y-min>
+  <z-min>0</z-min>
   <x-factor>0.002</x-factor>
   <y-factor>0.002</y-factor>
   <z-factor>0.00445</z-factor>
@@ -1542,35 +1558,35 @@
   <type>material</type> 
   <object-name>portance</object-name>
   <property-base>sim/model/c172p/material</property-base>
-  <shininess>105</shininess>
+  <shininess>128</shininess>
  </animation>
  
   <animation> 
   <type>material</type> 
   <object-name>trainee</object-name>
   <property-base>sim/model/c172p/material</property-base>
-  <shininess>105</shininess>
+  <shininess>128</shininess>
  </animation>
  
   <animation> 
   <type>vitesse</type> 
   <object-name>portance</object-name>
   <property-base>sim/model/c172p/material</property-base>
-  <shininess>105</shininess>
+  <shininess>128</shininess>
  </animation>
  
   <animation> 
   <type>poussee</type> 
   <object-name>portance</object-name>
   <property-base>sim/model/c172p/material</property-base>
-  <shininess>105</shininess>
+  <shininess>128</shininess>
  </animation>
  
   <animation> 
   <type>poids</type> 
   <object-name>portance</object-name>
   <property-base>sim/model/c172p/material</property-base>
-  <shininess>105</shininess>
+  <shininess>128</shininess>
  </animation>
 
  
