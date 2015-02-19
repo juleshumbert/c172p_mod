@@ -1416,11 +1416,11 @@
  <animation>
    <type>rotate</type>
    <object-name>portance</object-name>
-   <property>/fdm/jsbsim/forces/fwz-aero-lbs</property>
+   <property>/fdm/jsbsim/aero/alpha-deg</property>
    <factor>-1</factor>
    <axis>
-     <x>1.0</x>
-     <y>0.0</y>
+     <x>0.0</x>
+     <y>1.0</y>
      <z>0.0</z>
    </axis>
      <center>
