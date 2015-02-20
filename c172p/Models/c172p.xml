@@ -1315,7 +1315,7 @@
    <type>rotate</type>
    <object-name>vitesse</object-name>
    <property>/orientation/side-slip-deg</property>
-   <factor>1</factor>
+   <factor>-1</factor>
    <axis>
      <x>0.0</x>
      <y>0.0</y>
@@ -1328,6 +1328,7 @@
    </center>
  </animation>
  
+
     
     <!-- Vecteur vitesse fantome -->
 
@@ -1352,13 +1353,12 @@
  <animation>
    <type>scale</type>
     <object-name>vitesse2</object-name>
-    <property>/fdm/jsbsim/velocities/vtrue-kts</property>
-  <x-min>0.0</x-min>
-  <y-min>0</y-min>
-  <z-min>0</z-min>
-  <x-factor>1</x-factor>
-  <y-factor>1</y-factor>
-  <z-factor>1</z-factor>
+  <x-min>1</x-min>
+  <y-min>1</y-min>
+  <z-min>1</z-min>
+  <x-factor>0.1</x-factor>
+  <y-factor>0.05</y-factor>
+  <z-factor>0.05</z-factor>
      <center>
      <x-m>-1.5</x-m>
      <y-m>-0.0</y-m>
@@ -1369,17 +1369,29 @@
     <animation>
    <type>scale</type>
     <object-name>vitesse2</object-name>
-         <expression>
-				 <fabs>
-					<property>/fdm/jsbsim/accelerations/Nz</property>
-				</fabs>
-		 </expression>
-  <x-min>0</x-min>
-  <y-min>0</y-min>
-  <z-min>0</z-min>
-  <x-factor>1</x-factor>
-  <y-factor>1</y-factor>
-  <z-factor>1</z-factor>
+    	  <expression>
+		  <product>
+			  <property>/fdm/jsbsim/velocities/vtrue-kts</property>
+			  <sqrt>
+				  <fabs>
+					  <property>/fdm/jsbsim/accelerations/Nz</property> 
+				  </fabs>
+			  </sqrt>
+		  </product>
+		</expression>
+
+  <x-min>1</x-min>
+  <y-min>1</y-min>
+  <z-min>1</z-min>
+  <x-factor>
+1
+  </x-factor>
+  <y-factor>
+1
+  </y-factor>
+    <z-factor>
+1
+  </z-factor>
      <center>
      <x-m>-1.5</x-m>
      <y-m>-0.0</y-m>
@@ -1391,16 +1403,19 @@
 
  
   <!-- Poussee -->
+  
+
  <animation>
    <type>scale</type>
    <object-name>poussee</object-name>
    <property>/fdm/jsbsim/propulsion/engine/thrust-lbs</property>
+   <factor>0.001</factor>
   <x-min>0</x-min>
   <y-min>0</y-min>
   <z-min>0</z-min>
-  <x-factor>0.00445</x-factor>
-  <y-factor>0.002</y-factor>
-  <z-factor>0.002</z-factor>
+  <x-factor>0.01</x-factor>
+  <y-factor>0.005</y-factor>
+  <z-factor>0.005</z-factor>
      <center>
      <x-m>-1.8</x-m>
      <y-m>-0.0</y-m>
@@ -1408,26 +1423,25 @@
    </center>
  </animation>
  
+
    <!-- Portance -->
- 
-  
  <animation>
    <type>scale</type>
    <object-name>portance</object-name>
    <property>/fdm/jsbsim/forces/fwz-aero-lbs</property>
-         <factor>0.1</factor>
   <x-min>0</x-min>
   <y-min>0</y-min>
   <z-min>0</z-min>
-  <x-factor>0.002</x-factor>
-  <y-factor>0.002</y-factor>
-  <z-factor>0.00445</z-factor>
+  <x-factor>0.0005</x-factor>
+  <y-factor>0.0005</y-factor>
+  <z-factor>0.001</z-factor>
      <center>
      <x-m>0.5</x-m>
      <y-m>-0.0</y-m>
-     <z-m>0.5</z-m>
-   </center>
+     <z-m>0</z-m>
+   </center> 
  </animation>
+ 
  
  <animation>
    <type>rotate</type>
@@ -1442,12 +1456,34 @@
      <center>
      <x-m>0.5</x-m>
      <y-m>-0.0</y-m>
-     <z-m>0.5</z-m>
-   </center>     
+     <z-m>0</z-m>
+   </center>    
+ </animation>
+ 
+  
+   <animation>
+   <type>rotate</type>
+   <object-name>portance</object-name>
+   <property>/orientation/side-slip-deg</property>
+   <factor>-1</factor>
+   <axis>
+     <x>0.0</x>
+     <y>0.0</y>
+     <z>1.0</z>
+   </axis>
+     <center>
+     <x-m>0.5</x-m>
+     <y-m>-0.0</y-m>
+     <z-m>0</z-m>
+   </center> 
  </animation>
  
  
+ 
     <!-- Trainee -->
+    
+
+    
  <animation>
    <type>scale</type>
    <object-name>trainee</object-name>
@@ -1455,9 +1491,9 @@
   <x-min>0</x-min>
   <y-min>0</y-min>
   <z-min>0</z-min>
-  <x-factor>0.00445</x-factor>
-  <y-factor>0.002</y-factor>
-  <z-factor>0.002</z-factor>
+  <x-factor>0.01</x-factor>
+  <y-factor>0.005</y-factor>
+  <z-factor>0.005</z-factor>
      <center>
      <x-m>6</x-m>
      <y-m>0.0</y-m>
@@ -1486,7 +1522,7 @@
    <type>rotate</type>
    <object-name>trainee</object-name>
    <property>/orientation/side-slip-deg</property>
-   <factor>1</factor>
+   <factor>-1</factor>
    <axis>
      <x>0.0</x>
      <y>0.0</y>
@@ -1500,22 +1536,24 @@
  </animation>
 
    <!-- Poids -->
+
+   
  <animation>
    <type>scale</type>
    <object-name>poids</object-name>
    <property>/fdm/jsbsim/inertia/weight-lbs</property>
-      <factor>0.1</factor>
   <x-min>0</x-min>
   <y-min>0</y-min>
   <z-min>0</z-min>
-  <x-factor>0.002</x-factor>
-  <y-factor>0.002</y-factor>
-  <z-factor>0.00445</z-factor>
+  <x-factor>0.0005</x-factor>
+  <y-factor>0.0005</y-factor>
+  <z-factor>0.001</z-factor>
+
      <center>
-     <x-m>0.3</x-m>
+     <x-m>0.5</x-m>
      <y-m>-0.0</y-m>
-     <z-m>-0.5</z-m>
-   </center>
+     <z-m>0</z-m>
+   </center> 
  </animation>
  
     <animation>
@@ -1529,10 +1567,10 @@
      <z>0.0</z>
    </axis>
      <center>
-     <x-m>0.3</x-m>
+     <x-m>0.5</x-m>
      <y-m>-0.0</y-m>
-     <z-m>-0.5</z-m>
-   </center>
+     <z-m>0</z-m>
+   </center> 
  </animation>
       
   <animation>
@@ -1540,17 +1578,76 @@
    <object-name>poids</object-name>
    <property>/fdm/jsbsim/attitude/theta-deg</property>
    <factor>-1</factor>
-   <axis>
-     <x>0.0</x>
-     <y>1.0</y>
-     <z>0.0</z>
-   </axis>
+
+<axis>   
+   <x1-m> 0</x1-m>
+   <y1-m> 0</y1-m>
+   <z1-m>0</z1-m>
+   <x2-m> 0</x2-m>
+   <y2-m>
+1
+   </y2-m>
+   <z2-m>
+1
+   </z2-m>
+  </axis>
+ </animation>
+ 
+ <!-- Cercle -->
+
+   
+ <animation>
+   <type>scale</type>
+   <object-name>cercle</object-name>
+   <property>/fdm/jsbsim/inertia/weight-lbs</property>
+  <x-min>0</x-min>
+  <y-min>0</y-min>
+  <z-min>0</z-min>
+  <x-factor>0.001</x-factor>
+  <y-factor>0.001</y-factor>
+  <z-factor>0.001</z-factor>
      <center>
-     <x-m>0.3</x-m>
+     <x-m>0.5</x-m>
      <y-m>-0.0</y-m>
-     <z-m>-0.5</z-m>
+     <z-m>0</z-m>
+   </center>     
+ </animation>
+ 
+<!-- Jauge facteur de charge -->
+ <animation>
+   <type>scale</type>
+   <object-name>jauge</object-name>
+   <property>/fdm/jsbsim/accelerations/Nz</property>
+      <factor>0.1</factor>
+  <x-min>0</x-min>
+  <y-min>0</y-min>
+  <z-min>0</z-min>
+  <x-factor>1</x-factor>
+  <y-factor>1</y-factor>
+  <z-factor>1</z-factor>
+     <center>
+     <x-m>1.5</x-m>
+     <y-m>0</y-m>
+     <z-m>-1</z-m>
    </center>
  </animation>
+ 
+ <animation>
+  <condition>
+   <greater-than>
+    <property>/fdm/jsbsim/accelerations/Nz</property>
+    <value>2</value>
+   </greater-than>
+  </condition>
+ <type>material</type> 
+ <object-name>jauge</object-name>
+ <emission>	
+  <red>1</red>	
+  <green>0</green>	
+  <blue>0</blue>
+ </emission>
+ </animation>
+
  
 
 
