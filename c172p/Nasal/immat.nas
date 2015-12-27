@@ -31,7 +31,7 @@ setlistener("/sim/signals/fdm-initialized", func {
     if (callsign != "callsign")
       immat.setValue(callsign);
     else
-      immat.setValue("F-GHYQ");
+      immat.setValue("F-MOOC");
   }
   refresh_immat();
   if (refresh_immat_listener == nil)

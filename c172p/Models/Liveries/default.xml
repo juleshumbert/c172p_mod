@@ -9,19 +9,19 @@
       <livery>
         <name type="string">default</name>
 	 <index type="int">1</index>
-	 <texture>Liveries/fuselage2.png</texture>
+	 <texture>Liveries/fuselage.CAP.png</texture>
       </livery>
       
        <liverytail>
 	   <name type="string">default</name>
 	     <index type="int">1</index>
-	     <texture>Liveries/tail.png</texture>
+	     <texture>Liveries/tail.CAP.png</texture>
 	    </liverytail>
 	    
 	 <liverywing>
 	    <name type="string">default</name>
 	     <index type="int">1</index>
-	     <texture>Liveries/wing.png</texture>
+	     <texture>Liveries/wing.CAP.png</texture>
 	    </liverywing>
 	    
 	    <c172p>

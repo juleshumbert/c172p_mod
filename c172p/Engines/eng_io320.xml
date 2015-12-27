@@ -15,7 +15,7 @@
   <minmp unit="INHG">         8.3  </minmp>	<!-- Deprecated -->
   <maxmp unit="INHG">        28.5  </maxmp>	
   <displacement unit="IN3"> 320.0  </displacement>
-  <maxhp>                   260.0  </maxhp>	
+  <maxhp>                   160.0  </maxhp>	
   <!-- bsfc>                      0.37 </bsfc -->
   <cycles>                    4.0  </cycles>
   <idlerpm>                 600.0  </idlerpm>

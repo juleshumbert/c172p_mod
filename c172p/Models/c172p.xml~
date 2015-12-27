@@ -30,6 +30,7 @@
 
 
 
+
  <!-- Normal shader effect. Separate effects required for each normal map texture -->
 
  <effect>
@@ -1337,24 +1338,7 @@
     
     <!-- Vecteur vitesse fantome -->
 
-        <animation>
-   <type>scale</type>
-    	 
-   <object-name>vitesse2</object-name>
-   <property>/mod/v_stall</property>
-
-  <x-min>0.0</x-min>
-  <y-min>0.0</y-min>
-  <z-min>0.0</z-min>
-  <x-factor>0.1</x-factor>
-  <y-factor>0.05</y-factor>
-  <z-factor>0.05</z-factor>
-     <center>
-     <x-m>-1.5</x-m>
-     <y-m>-0.0</y-m>
-     <z-m>-1</z-m>
-   </center>
-   </animation>  
+      
   <animation>
    <type>rotate</type>
    <object-name>vitesse2</object-name>
@@ -1372,7 +1356,60 @@
    </center>
  </animation> 
 
+ <animation>
+   <type>scale</type>
+    <object-name>vitesse2</object-name>
+  <x-min>1</x-min>
+  <y-min>1</y-min>
+  <z-min>1</z-min>
+  <x-factor>0.1</x-factor>
+  <y-factor>0.05</y-factor>
+  <z-factor>0.05</z-factor>
+     <center>
+     <x-m>-1.5</x-m>
+     <y-m>-0.0</y-m>
+     <z-m>-1</z-m>
+   </center>
+   </animation>
+   
+    <animation>
+   <type>scale</type>
+   <object-name>vitesse2</object-name>
 
+  <x-min>1</x-min>
+  <y-min>1</y-min>
+  <z-min>1</z-min>
+  <x-factor>
+   
+    	  <expression>
+		  <product>
+			  <property>/fdm/jsbsim/velocities/vtrue-kts</property>
+			  <!-- <sqrt>
+			       <fabs> -->
+			   <product>
+ 			     <property>/fdm/jsbsim/accelerations/Nz</property>
+			     <value>10</value>
+			   </product>
+			   			   </product>
+
+			     
+			<!--	  </fabs>
+			  </sqrt> -->
+
+		</expression>
+  </x-factor>
+  <y-factor>
+1
+  </y-factor>
+    <z-factor>
+1
+  </z-factor>
+     <center>
+     <x-m>-1.5</x-m>
+     <y-m>-0.0</y-m>
+     <z-m>-1</z-m>
+   </center>
+   </animation>
   
   
 
@@ -1520,8 +1557,8 @@
   <x-min>0</x-min>
   <y-min>0</y-min>
   <z-min>0</z-min>
-  <x-factor>0.001</x-factor>
-  <y-factor>0.001</y-factor>
+  <x-factor>0.0005</x-factor>
+  <y-factor>0.0005</y-factor>
   <z-factor>0.001</z-factor>
 
      <center>
@@ -1530,8 +1567,8 @@
      <z-m>0</z-m>
    </center> 
  </animation>
-
-  <animation>
+ 
+    <animation>
    <type>rotate</type>
    <object-name>poids</object-name>
    <property>/fdm/jsbsim/attitude/phi-deg</property>
@@ -1545,46 +1582,28 @@
      <x-m>0.5</x-m>
      <y-m>-0.0</y-m>
      <z-m>0</z-m>
-     </center>
- </animation> 
-     
-   <animation>
-   <type>rotate</type>
-   <object-name>poids</object-name>
-   <property>/mod/cos_phi_theta</property>
-   <factor>-1</factor>
-   <center>
-   <x-m>0.5</x-m>
-   <y-m>0 </y-m>
-   <z-m>0 </z-m>
-   </center>
-  <axis>
-    <x> 0 </x>
-    <y> 1 </y>
-    <z> 0 </z>
-   </axis>
-
-   </animation>
-   <animation>
-   <type>rotate</type>
-   <object-name>poids</object-name>
-   <property>/mod/sin_phi_theta</property>
-   <factor>-1</factor>
-   <center>
-   <x-m>0.5</x-m>
-   <y-m>0 </y-m>
-   <z-m>0 </z-m>
-   </center>
-  <axis>
-    <x> 0 </x>
-    <y> 0 </y>
-    <z> 1 </z>
-   </axis>
-
-   </animation>
-
+   </center> 
+ </animation>
       
+  <animation>
+   <type>rotate</type>
+   <object-name>poids</object-name>
+   <property>/fdm/jsbsim/attitude/theta-deg</property>
+   <factor>-1</factor>
 
+<axis>   
+   <x1-m> 0</x1-m>
+   <y1-m> 0</y1-m>
+   <z1-m>0</z1-m>
+   <x2-m> 0</x2-m>
+   <y2-m>
+1
+   </y2-m>
+   <z2-m>
+1
+   </z2-m>
+  </axis>
+ </animation>
  
  <!-- Cercle -->
 
@@ -1603,7 +1622,6 @@
      <x-m>0.5</x-m>
      <y-m>-0.0</y-m>
      <z-m>0</z-m>
-
    </center>     
  </animation>
  

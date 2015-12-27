@@ -5,7 +5,7 @@
     xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 
     <fileheader>
-        <author> Unknown </author>
+        <author> Jules Humbert </author>
         <filecreationdate> 2002-01-01 </filecreationdate>
         <version> $Id: c172p.xml,v 1.27 2011/06/20 14:22:04 jentron Exp $ </version>
         <description> Cessna C-172 </description>
@@ -915,7 +915,7 @@
             </function>
         </axis>
     </aerodynamics>
-<!--
+
     <output name="JSBout172C.csv" type="CSV" rate="60">
       <property> aero/qbar-psf </property>
       <property> accelerations/udot-ft_sec2 </property>
@@ -938,5 +938,4 @@
       <fcs> OFF </fcs>
       <ground_reactions> OFF </ground_reactions>
     </output>
--->
 </fdm_config>
