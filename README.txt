@@ -12,7 +12,7 @@ Windows: %ProgramFiles%/FlightGear/data/
 
 Puis le répertoire /Aicraft à l'intérieur de ce dernier. 
 
-3/ Remplacer le répertoire c172p/ par le répertoire c172p télécharger.
+3/ Remplacer le répertoire c172p/ par le répertoire c172p téléchargé.
 
 4/ Lancer FlightGear.
 
