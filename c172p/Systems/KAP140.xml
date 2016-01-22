@@ -159,8 +159,8 @@
     <name>Wing Leveler (ROL) Mode</name>
     <debug>false</debug>
     <enable>
-      <prop>/autopilot/KAP140/locks/roll-axis</prop>
-      <value type="bool">true</value>
+      <prop>/autopilot/locks/heading</prop>
+      <value type="string">wing-leveler</value>
     </enable>
     <input>
       <prop>/instrumentation/turn-indicator/indicated-turn-rate</prop>

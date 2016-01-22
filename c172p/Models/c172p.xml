@@ -1281,15 +1281,41 @@
  
  
    <!-- Animation des fleches -->
-  <!-- Vecteur vitesse -->
- <animation>
+   <!-- Vecteur vitesse -->
+    <animation>
+  <type>translate</type>
+  <object-name>vitesse</object-name>
+  <factor>5</factor>
+  <offset-m>1</offset-m>
+  <axis>
+   <x>0</x>
+   <y>0</y>
+   <z>1</z>
+  </axis>
+    </animation>
+    
+
+    <animation>
+  <type>translate</type>
+  <object-name>vitesse</object-name>
+  <factor>5</factor>
+  <offset-m>0.3</offset-m>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+    </animation>
+    
+ 
+    <animation>
    <type>scale</type>
    <object-name>vitesse</object-name>
    <property>/fdm/jsbsim/velocities/vtrue-kts</property>
   <x-min>0.0</x-min>
   <y-min>0.0</y-min>
   <z-min>0.0</z-min>
-  <x-factor>0.1</x-factor>
+  <x-factor>0.07</x-factor>
   <y-factor>0.05</y-factor>
   <z-factor>0.05</z-factor>
      <center>
@@ -1335,7 +1361,33 @@
  
 
     
-    <!-- Vecteur vitesse fantome -->
+ <!-- Vecteur vitesse fantome -->
+
+     <animation>
+  <type>translate</type>
+  <object-name>vitesse2</object-name>
+  <factor>5</factor>
+  <offset-m>1</offset-m>
+  <axis>
+   <x>0</x>
+   <y>0</y>
+   <z>1</z>
+  </axis>
+    </animation>
+    
+
+    <animation>
+  <type>translate</type>
+  <object-name>vitesse2</object-name>
+  <factor>5</factor>
+  <offset-m>0.3</offset-m>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+    </animation>
+    
 
         <animation>
    <type>scale</type>
@@ -1346,7 +1398,7 @@
   <x-min>0.0</x-min>
   <y-min>0.0</y-min>
   <z-min>0.0</z-min>
-  <x-factor>0.1</x-factor>
+  <x-factor>0.07</x-factor>
   <y-factor>0.05</y-factor>
   <z-factor>0.05</z-factor>
      <center>
@@ -1354,7 +1406,8 @@
      <y-m>-0.0</y-m>
      <z-m>-1</z-m>
    </center>
-   </animation>  
+	</animation>
+
   <animation>
    <type>rotate</type>
    <object-name>vitesse2</object-name>
@@ -1440,6 +1493,40 @@
    <type>rotate</type>
    <object-name>portance</object-name>
    <property>/orientation/side-slip-deg</property>
+   <factor>-1</factor>
+   <axis>
+     <x>0.0</x>
+     <y>0.0</y>
+     <z>1.0</z>
+   </axis>
+     <center>
+     <x-m>0.5</x-m>
+     <y-m>-0.0</y-m>
+     <z-m>0</z-m>
+   </center> 
+ </animation>
+ 
+    <animation>
+   <type>rotate</type>
+   <object-name>portance</object-name>
+   <property>/mod/cos_beta_eta</property>
+   <factor>-1</factor>
+   <axis>
+     <x>1.0</x>
+     <y>0.0</y>
+     <z>0.0</z>
+   </axis>
+     <center>
+     <x-m>0.5</x-m>
+     <y-m>-0.0</y-m>
+     <z-m>0</z-m>
+   </center> 
+ </animation>
+ 
+    <animation>
+   <type>rotate</type>
+   <object-name>portance</object-name>
+   <property>/mod/sin_beta_eta</property>
    <factor>-1</factor>
    <axis>
      <x>0.0</x>

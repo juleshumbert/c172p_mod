@@ -236,6 +236,41 @@ setlistener("sim/signals/fdm-initialized", sinPhiTheta);
 
 setlistener("sim/signals/fdm-initialized", vStall);
 
+     var set_eta= func {
+
+ var y = getprop("/fdm/jsbsim/forces/fwy-aero-lbs");
+ var z = getprop("/fdm/jsbsim/forces/fwz-aero-lbs");
+ var eta_deg = math.atan2(y, z)*180/math.pi;
+ setprop("/mod/eta_deg", eta_deg);
+   settimer(set_eta, 0);
+}
+
+setlistener("sim/signals/fdm-initialized", set_eta);
+
+     var cosBetaEta = func {
+
+ var beta = getprop("/fdm/jsbsim/aero/beta-rad");
+ var eta = getprop("/mod/eta_deg");
+ var cos_beta_eta = math.cos(beta)*eta;
+ setprop("/mod/cos_beta_eta", cos_beta_eta);
+   settimer(cosBetaEta, 0);
+}
+
+setlistener("sim/signals/fdm-initialized", cosBetaEta);
+
+     var sinBetaEta = func {
+
+ var beta = getprop("/fdm/jsbsim/aero/beta-rad");
+ var eta = getprop("/mod/eta_deg");
+ var sin_beta_eta = math.sin(beta)*eta;
+ setprop("/mod/sin_beta_eta", sin_beta_eta);
+   settimer(sinBetaEta, 0);
+}
+
+setlistener("sim/signals/fdm-initialized", sinBetaEta);
+
+
+
    </script>
       <file>Aircraft/c172p/Nasal/hello.nas</file>
       <file>Aircraft/c172p/Nasal/liveries.nas</file>
